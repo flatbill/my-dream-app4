@@ -1,0 +1,70 @@
+<agm-map 
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoomeringo"
+  [disableDefaultUI]="false"
+  [zoomControl]="true"
+  (mapClick)="onMapClick($event)">
+
+  
+  <!-- <agm-marker 
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable"
+      (dragEnd)="markerDragEnd(m, $event)">
+      
+    <agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window>
+    
+  </agm-marker> -->
+  
+  <!-- <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
+      [radius]="5000"
+      [fillColor]="'blue'"
+      [circleDraggable]="true"
+      [editable]="true">
+  </agm-circle> -->
+  <agm-marker-cluster 
+    [maxZoom]="maxClusterZoomer"
+    imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m"
+  >
+  <agm-marker *ngFor="let m of markerArray1; let i = index"
+    (markerClick)="onMarkerClick(m)"
+    [latitude]="m.lat"
+    [longitude]="m.lng"
+    [iconUrl]="m.iconUrl"
+    [title]="m.locationId">
+    <!-- <agm-info-window #infoWindowHtml>
+      <span>{{m.title}}</span>
+      <p> wukka </p>
+    </agm-info-window> -->
+
+    <!-- supposedly these wrapper classes help snazzy window
+      <div #outerWrapper><div #viewContainer></div>wham</div><ng-content></ng-content> -->
+    <!-- <agm-snazzy-info-window 
+    [panOnOpen]=false
+    [closeWhenOthersOpen]="true"
+    [placement]="bottom" 
+    > snazzy window is confusing, jumps to wherever it wants
+      <ng-template>
+        {{m.title}}
+      </ng-template>
+    </agm-snazzy-info-window> -->
+    
+</agm-marker>
+</agm-marker-cluster>
+<!-- 
+   [title]="m.title">
+  [label]="{color: 'purple', text: m.title}" -->
+
+</agm-map>
+<!-- (markerClick)='onMarkerClick(infoWindowHtml)' -->
+<!-- [maxWidth]="150" 
+    [closeWhenOthersOpen]="true"
+    [maxHeight]="175"
+    [panOnOpen]=false
+    [placement]="bottom" -->

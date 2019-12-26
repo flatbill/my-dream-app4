@@ -1,0 +1,15 @@
+.cgMain {
+    display: grid;
+    grid-template-rows: 250px 620px 1900px ;
+	 grid-row-gap: 5px;  
+	grid-template-areas:
+	    "gt1 "
+        "gt2 "
+        "gt3 "
+		;
+}
+.gt1 { grid-area: gt1; background-color: yellow;}
+.gt2 { grid-area: gt2; background-color: orange;}
+.gt3 { grid-area: gt3; background-color: peru;}
+
+
